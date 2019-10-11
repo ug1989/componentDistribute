@@ -3,49 +3,80 @@
 
 // main.js
 import react from 'cdn#react@3.0';
+
 import reactDom from 'cdn#react-dom@2.0.2';
+
 import { Provider } from 'cdn@redux@2.2.1';
 
+
 import Store from 'cdn@store@1.0.0';
+
 import Index from './Index.jsx';
+
 
 reactDom.render(<Provider store={store}><Index></Provider>, document.querySeleter('#app'));
 
 // store.js
 import { createStore, applyMiddleware } from 'cdn@redux@2.2.1';
+
 const initStore = {};
+
 const asyncReducer = {};
+
 let store;
 
+
 export function injectReducer(reduces) {
+
   store.replaceReducer(createReducer(asyncReducer, store.getState()));
+
 }
+
 
 export default store = createStore(createReducer(), initialState, applyMiddleware());
 
 // Index.jsx
 import react from 'cdn#react@3.0';
+
 import reactDom from 'cdn#react-dom@2.0.2';
 
+
 import Switch from 'cpm#Switch@1.0.1';
+
 import ItemCpn from 'cpm#Item@1.8.5';
+
 import ItemLocal from './Item.jsx';
 
+
 export default class Index extends react.Component {
+
   constructor() {
+
     this.state = {};
+ 
   }
   
+  
   render() {
+  
     <div calss="header"></div>
+    
       <div calss="content">
+      
         <Switch>
+        
           <ItemCpn />
-          <ItemLocal />
+          
+            <ItemLocal />
+  
         </Switch>
+   
       </div>
+    
     <div calss="footer"></div>
+
   }
+
 }
 
 
